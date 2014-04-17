@@ -1,0 +1,16 @@
+<p>
+    <strong>Name:</strong>
+    <%= @picture.name %>
+</p>
+
+<p>
+    <strong>Author:</strong>
+    <%= link_to @picture.author.name, author_path(@picture.author) %>
+</p>
+
+<p>
+    <img src="<%= @picture.filename %>">
+</p>
+
+<%= link_to 'Back', pictures_path %>
+| <%= link_to 'Edit', edit_picture_path(@picture) %>

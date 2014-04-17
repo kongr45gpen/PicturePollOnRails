@@ -8,5 +8,10 @@
     <%= @author.name %>
 </p>
 
+<p>
+    <strong>Pictures:</strong>
+    <%= link_to pluralize(@author.pictures.count, "picture") + ' published', author_pictures_path(@author) %>
+</p>
+
 <%= link_to 'Back', authors_path %>
 | <%= link_to 'Edit', edit_author_path(@author) %>
