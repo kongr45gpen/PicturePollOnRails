@@ -40,7 +40,7 @@ gem 'spring',        group: :development
 
 group :development, :test do
     gem 'sqlite3', '1.3.8'
-    gem 'rspec-rails', '2.13.1'
+    gem 'rspec-rails', '~> 2.14.0'
 end
 
 group :test do
