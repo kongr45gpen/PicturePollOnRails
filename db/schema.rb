@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140416091115) do
+ActiveRecord::Schema.define(version: 20140417113227) do
 
   create_table "authors", force: true do |t|
     t.string   "slug"
@@ -29,5 +29,11 @@ ActiveRecord::Schema.define(version: 20140416091115) do
   end
 
   add_index "pictures", ["author_id"], name: "index_pictures_on_author_id", using: :btree
+
+  create_table "users", force: true do |t|
+    t.string   "username"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

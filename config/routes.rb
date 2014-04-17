@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'static_pages/about'
+
+  resources :users
+
   get 'welcome/index'
 
   resources :authors do
