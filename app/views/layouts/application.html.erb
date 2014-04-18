@@ -5,23 +5,10 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
 </head>
 <body>
- <div class="ui page grid masthead segment">
-    <div class="column">
-      <div class="ui pointing secondary menu">
-	<%= link_to 'Picture Poll On Rails', root_path, class: 'header item' %>
-	<div class="right menu">
-	<% { 'Authors'  => authors_path,
-	     'Pictures' => pictures_path,
-	     'Users'    => users_path
-	   }.each do |name, url| %>
-	  <%= link_to name, url, class: 'item' %>
-	<% end %>
-	</div>
-      </div>
-    </div>
- </div>
+  <%= render 'layouts/header' %>
 
   <div class="ui relaxed inverted page grid feature segment">
     <div class="ui two wide column"></div>
@@ -29,5 +16,7 @@
       <%= yield %>
     </div>
   </div>
+  
+  <%= render 'layouts/footer' %>
 </body>
 </html>
