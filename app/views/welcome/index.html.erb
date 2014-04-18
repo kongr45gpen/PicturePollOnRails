@@ -1,4 +1,35 @@
-<h1>Picture Poll on Rails</h1>
-<p><%= link_to 'Authors', controller: 'authors' %></p>
-<p><%= link_to 'Pictures', controller: 'pictures' %></p>
-<p><%= link_to 'Users', controller: 'users' %></p>
+<div class="ui three column center aligned stackable divided grid">
+  <div class="column">
+    <div class="ui icon header">
+      <i class="circular book link icon"></i>
+      Authors
+    </div>
+    <p>Photographers who take pictures</p>
+    <p><%= link_to authors_path, class: 'ui teal right labeled icon button' do %>
+      Authors <i class="right long arrow icon"></i>
+      <% end %>
+    </p>
+  </div>
+  <div class="column">
+    <div class="ui icon header">
+      <i class="circular code link icon"></i>
+      Pictures
+    </div>
+    <p>Picture list, you can vote on pictures</p>
+    <p><%= link_to pictures_path, class: 'ui teal right labeled icon button' do %>
+      Pictures <i class="right long arrow icon"></i>
+      <% end %>
+    </p>
+  </div>
+  <div class="column">
+    <div class="ui icon header">
+      <i class="circular user link icon"></i>
+      Users
+    </div>
+    <p>Show and manage the list of users.</p>
+    <p><p><%= link_to users_path, class: 'ui teal right labeled icon button' do %>
+      Users <i class="right long arrow icon"></i>
+      <% end %>
+    </p></p>
+  </div>
+</div>

@@ -1,3 +1,11 @@
+<% 
+  if @author 
+    provide(:title, "Pictures by #{@author.name}")
+  else
+    provide(:title, "Pictures")
+  end
+%>
+
 <h1>Listing pictures</h1>
 
 <table>

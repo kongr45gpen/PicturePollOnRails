@@ -1,0 +1,77 @@
+@import "semantic-ui";
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+/*   font-size: 15px; */
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background-color: #222222;
+  color: #555555;
+  text-rendering: optimizeLegibility;
+}
+
+.ui.header {
+  font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+a {
+  color: #009FDA;
+  text-decoration: none;
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.menu .item {
+  -webkit-transition: all 0.1s ease !important;
+  -moz-transition: all 0.1s ease !important;
+  transition: all 0.1s ease !important;
+}
+
+a:hover {
+  color: #00BAFF;
+}
+
+p a {
+  font-weight: bold;
+}
+
+.ui.page.grid.segment {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  font-size: 0.9rem;
+}
+
+.masthead.segment {
+/*  background-image: url(images/bg.jpg);*/
+  -webkit-background-size: cover;
+  background-size: cover;
+  margin: 0em;
+  padding-top: 4rem;
+  overflow: hidden;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1) inset !important;
+}
+
+.ui.inverted.segment {
+  color: #DDD;
+}
+
+.feature .divided.grid .header + p {
+  min-height: 100px;
+  font-size: 0.9rem;
+}
