@@ -52,6 +52,7 @@ end
 group :test do
     gem 'selenium-webdriver', '~> 2.41.0'
     gem 'capybara', '~> 2.2.0'
+    gem 'factory_girl_rails', '~> 4.4.0'
     
     # Uncomment this line on OS X.
   # gem 'growl', '1.0.3'
