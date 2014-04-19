@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :pictures
 
+  match '/signup',  to: 'users#signup',            via: 'get'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
