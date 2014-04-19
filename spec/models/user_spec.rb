@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe User do
   before { @user = User.new(username: "exampleuser",
+                            email: "sample@test.com",
                             password: "test1234",
                             password_confirmation: "test1234"
                            ) }
@@ -9,6 +10,7 @@ describe User do
   subject { @user }
 
   it { should respond_to(:username) }
+  it { should respond_to(:email) }
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
@@ -35,9 +37,25 @@ describe User do
     it { should_not be_valid }
   end
 
+  describe "when email is not present" do
+    before { @user.email = " " }
+    it { should_not be_valid }
+  end
+
+  describe "when email is already taken" do
+    before do
+      user_with_same_email = @user.dup
+      user_with_same_email.email = @user.email.upcase
+      user_with_same_email.save
+    end
+
+    it { should_not be_valid }
+  end
+
   describe "when password is not present" do
     before do
       @user = User.new(username: "exampleuserwithoutpass",
+                       email: "valid@email.com",
                        password: " ",
                        password_confirmation: " "
                       )
@@ -79,6 +97,39 @@ describe User do
       @user.username = mixed_case_username
       @user.save
       expect(@user.reload.username).to eq mixed_case_username.downcase
+    end
+  end
+
+  describe "email with mixed case" do
+    let(:mixed_case_email) { "sAmPlEeMaiLADDress@eXAMple.CoM" }
+
+    it "should be saved as all lower-case" do
+      @user.email = mixed_case_email
+      @user.save
+      expect(@user.reload.email).to eq mixed_case_email.downcase
+    end
+  end
+
+  describe "invalid email" do
+
+    describe "that looks like a username" do
+      before { @user.email = "thisisnotamail" }
+      it { should be_invalid }
+    end
+
+    describe "that has no dot" do
+      before { @user.email = "thisis@notanemailcom" }
+      it { should be_invalid }
+    end
+
+    describe "that has no @ sign" do
+      before { @user.email = "thisisnotanemail.com" }
+      it { should be_invalid }
+    end
+
+    describe "that has a double dot" do
+      before { @user.email = "thisis@notemail..com" }
+      it { should be_invalid }
     end
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419142121) do
+ActiveRecord::Schema.define(version: 20140419160625) do
 
   create_table "authors", force: true do |t|
     t.string   "slug"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140419142121) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
+    t.string   "email"
   end
 
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
