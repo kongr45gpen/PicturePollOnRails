@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'spork'
+require 'coveralls'
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
 
@@ -55,6 +56,8 @@ Spork.each_run do
   # This code will be run each time you run your specs.
 
 end
+
+Coveralls.wear!
 
 # --- Instructions ---
 # Sort the contents of this file into a Spork.prefork and a Spork.each_run
