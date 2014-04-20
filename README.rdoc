@@ -1,4 +1,4 @@
-== README {<img src="https://codeclimate.com/github/kongr45gpen/PicturePollOnRails.png" alt="Code Quality" />}[https://travis-ci.org/kongr45gpen/PicturePollOnRails]{<img src="https://travis-ci.org/kongr45gpen/PicturePollOnRails.svg" alt="Build Status" />}[https://travis-ci.org/kongr45gpen/PicturePollOnRails]
+== README {<img src="https://codeclimate.com/github/kongr45gpen/PicturePollOnRails.png" alt="Code Quality" />}[https://travis-ci.org/kongr45gpen/PicturePollOnRails] {<img src="https://travis-ci.org/kongr45gpen/PicturePollOnRails.svg" alt="Build Status" />}[https://travis-ci.org/kongr45gpen/PicturePollOnRails]
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

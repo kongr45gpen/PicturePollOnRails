@@ -17,8 +17,25 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def signup
+    @user = User.new
+  end
+
   # GET /users/1/edit
   def edit
+  end
+
+  # POST /signup
+  def dosignup
+    @user = User.new(user_params)
+
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to @user, notice: 'User was successfully created.' }
+      else
+        format.html { render :signup }
+      end
+    end
   end
 
   # POST /users
@@ -73,6 +90,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username)
+      params.require(:user).permit(:username, :email, :password, :password_confirmation)
     end
 end

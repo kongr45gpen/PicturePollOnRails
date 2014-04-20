@@ -3,12 +3,15 @@
     <div class="ui pointing secondary menu">
       <%= link_to 'Picture Poll On Rails', root_path, class: 'header item' %>
       <div class="right menu">
-      <% { 'Authors'  => authors_path,
-	    'Pictures' => pictures_path,
-	    'Users'    => users_path
-	  }.each do |name, url| %>
-	<%= link_to name, url, class: 'item' %>
+      <% [ ['Authors', authors_path, 'camera retro'],
+	    ['Pictures', pictures_path, 'photo'],
+	    ['Users', users_path, 'user'],
+	  ].each do |name, url, icon| %>
+	<%= link_to url, class: 'item' do %>
+	  <i class="<%= icon %> icon"></i><%= name %>
+	<% end %>
       <% end %>
+      <%= link_to "Signup", signup_path, class: 'item' %>
       </div>
     </div>
   </div>
