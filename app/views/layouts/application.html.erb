@@ -13,6 +13,9 @@
   <div class="ui relaxed inverted page grid feature segment">
     <div class="ui two wide column"></div>
     <div class="twelve wide column">
+      <% flash.each do |message, type| %>
+	<%= content_tag :div, message, class: "ui #{type} message" %>
+      <% end %>
       <%= yield %>
     </div>
   </div>
