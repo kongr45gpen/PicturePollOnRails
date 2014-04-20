@@ -17,6 +17,7 @@
 /tmp
 
 # Ignore other unneeded files.
+coverage/
 database.yml
 doc/
 *.swp
