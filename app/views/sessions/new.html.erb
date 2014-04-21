@@ -1,0 +1,22 @@
+<% provide(:title, "Sign in") %>
+<h1>Sign in</h1>
+
+<%= form_for :session, url: sessions_path do |f| %>
+
+    <div class="ui top attached form segment">
+
+    <div class="field">
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+
+  </div>
+
+  <%= f.submit "Sign in", class: "ui bottom attached button" %>
+
+<% end %>

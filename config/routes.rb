@@ -11,6 +11,10 @@ Rails.application.routes.draw do
 
   resources :pictures
 
+  resources :sessions, only: [:new, :create, :destroy]
+
+  match '/signin',  to: 'sessions#new',		   via: 'get'
+  match '/signout', to: 'sessions#destroy',	   via: 'delete'
   match '/signup',  to: 'users#signup',            via: 'get'
   match '/signup',  to: 'users#dosignup',	   via: 'post'
 

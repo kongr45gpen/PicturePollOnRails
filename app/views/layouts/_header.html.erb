@@ -11,7 +11,14 @@
 	  <i class="<%= icon %> icon"></i><%= name %>
 	<% end %>
       <% end %>
-      <%= link_to "Signup", signup_path, class: 'item' %>
+
+      <% if signed_in? %>
+	<%= link_to "Profile", user_path(current_user), class: 'item' %>
+	<%= link_to "Logout", signout_path, method: "delete", class: 'item' %>
+      <% else %>
+	<%= link_to "Signup", signup_path, class: 'item' %>
+	<%= link_to "Login", signin_path, class: 'item' %>
+      <% end %>
       </div>
     </div>
   </div>
