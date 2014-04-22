@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   match '/signup',  to: 'users#signup',            via: 'get'
   match '/signup',  to: 'users#dosignup',	   via: 'post'
 
+  match '/profile/edit',  to: 'users#self_edit',   via: 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -25,6 +25,10 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def self_edit
+    @user = current_user
+  end
+
   # POST /signup
   def dosignup
     @user = User.new(user_params)
@@ -32,7 +36,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
 	sign_in @user
-	flash["Welcome to Picture Poll!"] = :success
+        flash[:success] = "Welcome to Picture Poll!"
         format.html { redirect_to @user }
       else
         format.html { render :signup }
@@ -47,7 +51,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, success: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -61,7 +65,8 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        flash[:success] = 'Profile updated.'
+        format.html { redirect_to @user }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }

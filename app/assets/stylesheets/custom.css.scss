@@ -86,6 +86,10 @@ p a {
   @extend .field.error;
 }
 
+.ui.notice.message {
+  @extend .ui.info.message;
+}
+
 .ui.attached.buttons, .ui.attached.button {
   -webkit-box-shadow: 0px 0px 0px 1px #DDDDDD !important;
   box-shadow: 0px 0px 0px 1px #DDDDDD !important;
