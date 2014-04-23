@@ -1,0 +1,15 @@
+<div class="item">
+  <div class="ui right floated buttons">
+    <%= link_to  user, class: "tiny labeled blue ui icon button" do %>
+      <i class="small user icon"></i> Show
+    <% end %>
+    <%= link_to 'Edit', edit_user_path(user), class: "tiny blue ui button" %>
+    <%= link_to user, method: :delete, data: { confirm: 'Are you sure?' }, class: "tiny purple right labeled ui icon button" do %>
+      Delete <i class="small delete icon"></i>
+    <% end %>
+  </div>
+  <%= gravatar_for user, class: "ui avatar image" %>
+  <div class="content">
+    <div class="header"><%= user.username %></div>
+  </div>
+</div>

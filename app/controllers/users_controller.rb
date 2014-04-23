@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :new_user, only: [:new, :signup]
+  before_action :signed_in_user, only: [:edit, :update, :self_edit]
+  before_action :correct_user, only: [:update]
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page])
   end
 
   # GET /users/1
@@ -14,10 +17,6 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
-  end
-
-  def signup
     @user = User.new
   end
 
@@ -98,5 +97,21 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    end
+
+    def signed_in_user
+      unless signed_in?
+        flash[:warning] = "Please sign in"
+        store_location
+        redirect_to signin_url
+      end
+    end
+
+    def correct_user
+      redirect_to(root_url) unless current_user?(@user)
+    end
+
+    def new_user
+      @user = User.new
     end
 end

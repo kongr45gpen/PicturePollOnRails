@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.1.0"
+ruby "2.1.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
@@ -24,13 +24,16 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-gem 'semantic-ui-sass', '~> 0.15.5.0'
+gem 'semantic-ui-sass', '~> 0.16.1.0'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.0'
+
+gem 'faker'
+gem 'will_paginate'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -48,14 +51,15 @@ group :development, :test do
     gem 'spork-rails', '~> 4.0.0'
     gem 'guard-spork', '~> 1.5.0'
     gem 'childprocess', '~> 0.5.0'
+    gem 'coveralls', require: false
 end
 
 group :test do
     gem 'selenium-webdriver', '~> 2.41.0'
     gem 'capybara', '~> 2.2.0'
     gem 'factory_girl_rails', '~> 4.4.0'
-    
-    # Uncomment this line on OS X.
+
+  # Uncomment this line on OS X.
   # gem 'growl', '1.0.3'
 
   # Uncomment these lines on Linux.
@@ -72,5 +76,5 @@ group :production do
     gem 'rails_12factor', '0.0.2'
 end
 
-gem 'coveralls', require: false
+
 
